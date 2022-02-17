@@ -7,9 +7,7 @@ class Solution:
         stack = []
         for i, char in enumerate(s):
             if char == '(' or char == ')':
-                if len(stack) == 0:
-                    stack.append((char,i))
-                elif char == ')' and stack[-1][0] == '(':
+                if len(stack) != 0 and char == ')' and stack[-1][0] == '(':
                     stack.pop()
                 else:
                     stack.append((char, i))
